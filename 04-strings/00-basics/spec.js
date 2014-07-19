@@ -8,7 +8,7 @@ describe("formLetter", function() {
 
   it("should return a properly formated letter", function() {
     result = "Hello Rob,\n\nTake care.\n\nSincerely,\nJoe";
-    expect(challenge.formLetter("Rob", "Joe", "Take care.")).to.eql(result);
+    expect(challenge.formLetter("Rob", "Joe", "Take care.")).to.equal(result);
   });
 });
 
@@ -26,27 +26,27 @@ describe("sliceItAndCombineIt", function() {
 
   it("should not modify the original string", function() {
     challenge.sliceItAndCombineIt(bigString, 10, 20, 30, 40);
-    expect(bigString).to.eql(origString, "Your function shouldn't modify the string argument!");
+    expect(bigString).to.equal(origString, "Your function shouldn't modify the string argument!");
   });
 
   it("should concatenate disjoint substrings", function() {
     result = challenge.sliceItAndCombineIt(bigString, 10, 15, 27, 36);
-    expect(result).to.eql("long emergency");
+    expect(result).to.equal("long emergency");
   });
 
   it("should handle an empty second string", function() {
     result = challenge.sliceItAndCombineIt(bigString, 0, 4, 0, 0);
-    expect(result).to.eql("This");
+    expect(result).to.equal("This");
   });
 
   it("should handle an empty first string", function() {
     result = challenge.sliceItAndCombineIt(bigString, 0, 0, 0, 4);
-    expect(result).to.eql("This");
+    expect(result).to.equal("This");
   });
 
   it("should handle overlapping strings", function() {
     result = challenge.sliceItAndCombineIt(bigString, 0, 4, 0, 4);
-    expect(result).to.eql("ThisThis");
+    expect(result).to.equal("ThisThis");
   });
 });
 
